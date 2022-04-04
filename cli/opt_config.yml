@@ -1,0 +1,13 @@
+
+OPTUNA:
+  optuna_sqldb: ''
+  optuna_study_name: ''
+  sampler: nsgaii
+  direction: ~
+  directions: ~
+  opt_model_file: ''
+  bmh_function_name: setup
+  n_trials: 1
+
+USER:
+  user_example: example_user_paramter
