@@ -9,6 +9,9 @@
 
 Documentation for Optuna-ExternM related packages
 
+ - [optuna-externm](https://www.github.com/trhallam/optuna-externm)
+ - [optuna-hm](https://www.github.com/trhallam/optuna-hm)
+
 ## Build using
 
 ```

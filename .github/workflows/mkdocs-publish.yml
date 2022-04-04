@@ -89,7 +89,7 @@ jobs:
     - name: failed?
       if: needs.mkdocs_build_test_deploy.result == 'failure'
       run: |
-        echo "BADGE_COLOUR=RED" >> $GITHUB_ENV
+        echo "BADGE_COLOUR=red" >> $GITHUB_ENV
         echo "BADGE_MSG=fail" >> $GITHUB_ENV
 
     - name: create test badges
