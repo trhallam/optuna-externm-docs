@@ -1,0 +1,13 @@
+mkdocs
+mkdocstrings
+mkdocs-material
+mkdocs-material-extensions
+mkdocs-simple-plugin
+mkdocs-jupyter
+mkdocs-gen-files
+mkdocs-include-markdown-plugin
+mkautodoc
+jupyterlab
+matplotlib
+optuna-externm
+optuna-hm
