@@ -10,6 +10,12 @@
 
 {% include-markdown "help_results.md" %}
 
+## `optuna-em sa` Usage
+
+### `sa` help menu
+
+{% include-markdown "help_sa.md" %}
+
 ## `optuna-em opt` Usage
 
 ### `opt` help menu

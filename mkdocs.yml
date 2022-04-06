@@ -106,9 +106,8 @@ nav:
 
   - "API":
     - "Core": api/core.md
-    # - "rg": api/rg.md
-    # - "Wavelets": api/wavelets.md
-    # - "seis": api/seis.md
+    - "Sensitivity Samplers": api/sa.md
+    - "Optimisation Samplers": api/opt.md
 
   - "Optuna-HM":
     - "About": "ophm/about.md"
