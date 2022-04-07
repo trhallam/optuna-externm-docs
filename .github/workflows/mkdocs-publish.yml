@@ -68,11 +68,15 @@ jobs:
           pip install -r requirements.txt
 
       - name: build docs
-        run: mkdocs build -f mkdocs.yml
+        run: |
+          cd optuna-externm-docs
+          mkdocs build -f mkdocs.yml
 
       - name: deploy mkdocs
         if: success() && github.event_name == 'push' && github.ref_name == 'main'
-        run: mkdocs gh-deploy -f mkdocs.yml
+        run: |
+          cd optuna-externm-docs
+          mkdocs gh-deploy -f mkdocs.yml
 
   docs_badge:
     name: create docs badges
