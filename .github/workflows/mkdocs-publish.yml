@@ -36,7 +36,7 @@ jobs:
       - name: create requirements optuna-externm and install packages
         run: |
           cd optuna-externm
-          pip-compile setup.cfg --extra docs
+          pip-compile setup.cfg --extra docs,options
           pip install -r requirements.txt
           pip install .
 
