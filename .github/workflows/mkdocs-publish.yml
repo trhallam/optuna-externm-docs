@@ -15,55 +15,56 @@ jobs:
     steps:
 
       - name: Checkout optuna-externm
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0
           repository: trhallam/optuna-externm
           token: ${{ secrets.GH_PRIVATE_TOKEN }}
+          path: optuna-externm
 
-      # required to use caching because it depends on requirements.txt
-      - name: create requirements optuna-externm
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python }}
+          cache: 'pip'
+
+      - name: Update PIP
         run: |
           python -m pip install --upgrade pip
           pip install pip_tools
-          pip-compile setup.cfg --extra docs
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python }}
-
-      - name: Install package and deps optuna-externm
+      # required to use caching because it depends on requirements.txt
+      - name: create requirements optuna-externm and install packages
         run: |
+          cd optuna-externm
+          pip-compile setup.cfg --extra docs
           pip install -r requirements.txt
           pip install .
 
       - name: Checkout optuna-hm
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0
           repository: trhallam/optuna-hm
           token: ${{ secrets.GH_PRIVATE_TOKEN }}
+          path: optuna-hm
 
       # required to use caching because it depends on requirements.txt
       - name: create requirements optuna-hm
         run: |
+          cd optuna-hm
           mv setup.cfg setup.cfg.bu
           grep -v optuna-externm setup.cfg.bu > setup.cfg
           pip-compile setup.cfg
-
-      - name: Install package and deps optuna-hm
-        run: |
           pip install -r requirements.txt
           pip install .
 
       - name: Checkout main
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          path: optuna-externm-docs
 
       - name: Install docs deps
         run: |
+          cd optuna-externm-docs
           pip install -r requirements.txt
 
       - name: build docs
