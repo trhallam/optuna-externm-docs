@@ -4,17 +4,22 @@
 from optuna_hm import handlers
 ```
 
-## `optuna_hm.handlers.ecl`
+## `optuna_hm.handlers.simh`
 
-Handlers for interfacing with and evaluating Eclipse (Schlumberger) Reservoir Simulation models. Eclipse is a proprietary simulation software which has a command
-line interface.
+Generic handlers for interfacing with and evaluating Eclipse (Schlumberger) style reservoir simulation models and software. The software must have an command line interface.
 
-::: optuna_hm.handlers._ecl_simh
+::: optuna_hm.handlers.simh
     rendering:
       show_signature: true
       separate_signature: true
       heading_level: 3
       show_root_toc_entry: false
+
+## `optuna_hm.handlers.ecl`
+
+Handlers for interfacing with and evaluating Eclipse (Schlumberger) Reservoir Simulation models. Eclipse is a proprietary simulation software which has a command
+line interface.
+
 
 ::: optuna_hm.handlers._ecl_eval
     rendering:
