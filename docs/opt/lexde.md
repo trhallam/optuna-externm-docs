@@ -1,4 +1,4 @@
-# Example
+# Solving xxx (formal name of Alexandre's model) with Lex-DE in optuna-externm
 
 ## Install Requirements
 
